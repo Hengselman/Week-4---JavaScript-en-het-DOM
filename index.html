@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="main.css"/>
+    <script src="main.js" charset="utf-8"></script>
   <title>Week 4 - JavaScript en het DOM</title>
 </head>
 <body>
@@ -15,42 +16,48 @@
     <h3> *De lekkerste kebab, door de kleinste mensen* </h3>
   </header>
   <main class="gerechtenlijst">
-    <article class="menuItem populair">
+    <section class="filter_buttons">
+      <input class="buttonFilter" id="buttonPopulair" type="checkbox" name="populair">Populair
+      <input class="buttonFilter" id="buttonKleineHap" type="checkbox" name="kleineHap">Kleine hap
+      <input class="buttonFilter" id="buttonGroteHap" type="checkbox" name="groteHap">Grote hap
+      <input class="buttonFilter" id="buttonSnack" type="checkbox" name="snack">Snack
+      <input class="buttonFilter" id="buttonVegetarisch" type="checkbox" name="vegetarisch">Vegetarisch
+    </section>
+    <article id="broodje_doner" class="menuItem" data-soort="kleine hap" data-popularity="populair" data-vegan="false" >
       <p>Broodje döner - De klassieker.</p>
       <figure><img class="gerecht" src="img/broodje_doner.jpg" alt="Foto van een lekker broodje doner."></figure>
     </article>
-    
-    <article class="menuItem vega">
+    <article id="turkse_pizza" class="menuItem" data-soort="grote hap" data-popularity="populair" data-vegan="true" >
       <p>Turkse Pizza - Onze specialiteit!</p>
       <figure><img class="gerecht" src="img/turkse_pizza.jpg" alt="Foto van een turkse pizza."></figure>
     </article>
-    <article class="menuItem populair">
+    <article id="kapsalon" class="menuItem populair" data-soort="grote hap" data-popularity="populair" data-vegan="false" >
       <p>Kapsalon - Nostalgisch lekker.</p>
       <figure><img class="gerecht" src="img/kapsalon.jpg" alt="Foto van onze zelfgemaakte Kapsalon."></figure>
     </article>
 
-    <article class="menuItem snack">
+    <article id="hamburger" class="menuItem" data-soort="snack" data-popularity="normaal" data-vegan="false" >
       <p>Hamburger - Zoals je moeder hem altijd maakte.</p>
       <figure><img class="gerecht" src="img/hamburger.jpg" alt="Foto van onze hamburger met frietjes."></figure>
     </article>
-    <article class="menuItem populair">
+    <article id="kabouter_speciaal" class="menuItem" data-soort="grote hap" data-popularity="populair" data-vegan="false" >
       <p>Kabouter Special - Wie het kleine niet eert, is het grote niet weerd.</p>
       <figure><img class="gerecht" src="img/kabouter_speciaal.png" alt="Foto van ons speciale gerecht, schotel kebab."></figure>
     </article>
-    <article class="menuItem vega">
+    <article id="pita_kaas" class="menuItem" data-soort="kleine hap" data-popularity="normaal" data-vegan="true">
       <p>Pita kaas - Bekend van het nummer!</p>
       <figure><img class="gerecht" src="img/pita_kaas.jpg" alt="Foto van een pitabroodje met gesmolten kaas."></figure>
     </article>
 
-    <article class="menuItem snack">
+    <article id="diverse_snacks" class="menuItem" data-soort="snack" data-popularity="normaal" data-vegan="false" >
       <p>Diverse snacks - Frituren als een malle.</p>
       <figure><img class="gerecht" src="img/snacks.jpg" alt="Foto van verschillende snacks die verkrijgbaar zijn."></figure>
     </article>
-    <article class="menuItem vega">
+    <article id="broodje_paddestoel" class="menuItem" data-soort="kleine hap" data-popularity="normaal" data-vegan="true" >
       <p>Broodje paddestoel - Hmmm, rood met witte stippen.</p>
       <figure><img class="gerecht" src="img/broodje_paddestoel.jpg" alt="Foto van ons broodje paddestoel."></figure>
     </article>
-    <article class="menuItem snack">
+    <article id="kaboutersalon" class="menuItem" data-soort="snack" data-popularity="normaal" data-vegan="false" >
       <p>Kaboutersalon - Voor de kleine smullers.</p>
       <figure><img class="gerecht" src="img/kaboutersalon.jpg" alt="Foto van onze kapsalon voor kinderen."></figure>
     </article>
