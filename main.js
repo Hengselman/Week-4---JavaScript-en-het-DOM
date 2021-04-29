@@ -10,36 +10,26 @@ const diverse_snacks = document.querySelector('#diverse_snacks');
 const broodje_paddestoel = document.querySelector('#broodje_paddestoel');
 const kaboutersalon = document.querySelector('#kaboutersalon');
 
+
+const buttonFilter = document.getElementsByClassName('buttonFilter');
+const buttonPopulair = document.getElementById('buttonPopulair');
+const buttonKleineHap = document.getElementById('buttonKleineHap');
+const buttonGroteHap = document.getElementById('buttonGroteHap');
+const buttonSnack = document.getElementById('buttonSnack');
+const buttonVegetarisch = document.getElementById('buttonVegetarisch');
+
 var menuItem = document.getElementsByClassName('menuItem');
 
-for(i = 0; i < menuItem.length(); i++){
-  if(menuItem[i].dataset.soort != 'kleine hap'){
-    menuItem[i].style.display = "none";
-    console.log("For loop en menuitem[i] werkt");
-  }
+function addEventListenerCheckbox() {
+  buttonPopulair.addEventListener("change", () => filter())
+  buttonKleineHap.addEventListener("change", () => filter())
+  buttonGroteHap.addEventListener("change", () => filter())
+  buttonSnack.addEventListener("change", () => filter())
+  buttonVegetarisch.addEventListener("change", () => filter())
 }
-
 
 function filter() {
-  if(button_kleineHap = true){
-    for(i = 0; i < menuItem.length(); i++){
-      if(menuItem[i].dataset.soort != 'kleine hap'){
-        menuItem[i].style.display = "none";
-      }
-    }
-  }
-  if(button_groteHap = true){
-    for(int i = 0; i > menuItem.length(); i++){
-      if(menuItem[i].dataset.soort == 'kleine hap'){
-        menuItem[i].style.display = "none";
-      }
-    }
-  }
-  if(button_snack = true){
-    for(int i = 0; i > menuItem.length(); i++){
-      if(menuItem[i].dataset.soort != 'kleine hap'){
-        menuItem[i].style.display = "none";
-      }
-    }
-  }
+  console.log("Function Filter() werkt.")
 }
+
+addEventListenerCheckbox();
