@@ -1,35 +1,71 @@
-console.log("Javascript ingeladen.");
-
-const broodje_doner = document.querySelector('#broodje_doner');
-const turkse_pizza = document.querySelector('#turkse_pizza');
-const kapsalon = document.querySelector('#kapsalon');
-const hamburger = document.querySelector('#hamburger');
-const kabouter_speciaal = document.querySelector('#kabouter_speciaal');
-const pita_kaas = document.querySelector('#pita_kaas');
-const diverse_snacks = document.querySelector('#diverse_snacks');
-const broodje_paddestoel = document.querySelector('#broodje_paddestoel');
-const kaboutersalon = document.querySelector('#kaboutersalon');
-
-
-const buttonFilter = document.getElementsByClassName('buttonFilter');
 const buttonPopulair = document.getElementById('buttonPopulair');
 const buttonKleineHap = document.getElementById('buttonKleineHap');
 const buttonGroteHap = document.getElementById('buttonGroteHap');
 const buttonSnack = document.getElementById('buttonSnack');
 const buttonVegetarisch = document.getElementById('buttonVegetarisch');
 
-var menuItem = document.getElementsByClassName('menuItem');
+const datasetPopulair = document.querySelectorAll("[data-popularity='populair']");
+const datasetKleineHap = document.querySelectorAll("[data-soort='kleine hap']");
+const datasetGroteHap = document.querySelectorAll("[data-soort='grote hap']");
+const datasetSnack = document.querySelectorAll("[data-soort='snack']");
+const datasetVegan = document.querySelectorAll("[data-vegan='false']");
 
-function addEventListenerCheckbox() {
-  buttonPopulair.addEventListener("change", () => filter())
-  buttonKleineHap.addEventListener("change", () => filter())
-  buttonGroteHap.addEventListener("change", () => filter())
-  buttonSnack.addEventListener("change", () => filter())
-  buttonVegetarisch.addEventListener("change", () => filter())
-}
+buttonPopulair.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    for(i = 0; i < datasetPopulair.length; i++){
+      datasetPopulair[i].style.display = "";
+    }
+  } else {
+    for(i = 0; i < datasetPopulair.length; i++){
+      datasetPopulair[i].style.display = "none";
+    }
+  }
+});
 
-function filter() {
-  console.log("Function Filter() werkt.")
-}
+buttonKleineHap.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    for(i = 0; i < datasetKleineHap.length; i++){
+      datasetKleineHap[i].style.display = "";
+    }
+  } else {
+    for(i = 0; i < datasetKleineHap.length; i++){
+      datasetKleineHap[i].style.display = "none";
+    }
+  }
+});
 
-addEventListenerCheckbox();
+buttonGroteHap.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    for(i = 0; i < datasetGroteHap.length; i++){
+      datasetGroteHap[i].style.display = "";
+    }
+  } else {
+    for(i = 0; i < datasetGroteHap.length; i++){
+      datasetGroteHap[i].style.display = "none";
+    }
+  }
+});
+
+buttonSnack.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    for(i = 0; i < datasetSnack.length; i++){
+      datasetSnack[i].style.display = "";
+    }
+  } else {
+    for(i = 0; i < datasetSnack.length; i++){
+      datasetSnack[i].style.display = "none";
+    }
+  }
+});
+
+buttonVegetarisch.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    for(i = 0; i < datasetVegan.length; i++){
+      datasetVegan[i].style.display = "none";
+    }
+  } else {
+    for(i = 0; i < datasetVegan.length; i++){
+      datasetVegan[i].style.display = "";
+    }
+  }
+});
